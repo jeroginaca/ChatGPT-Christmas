@@ -38,16 +38,26 @@ export default function Gifts() {
   }
 
   return (
-    <div>
+    <div className={styles.body}>
       <Head>
         <title>OpenAI Quickstart 🎁 💡</title>
         <link rel="icon" href="/dog.png" />
       </Head>
 
       <main className={styles.main}>
-        <img src="/dog.png" className={styles.icon} />
-        <h3>Christmas Gift Generator 🎁 💡 </h3>
-        <form onSubmit={onSubmit}>
+        
+        
+
+        {loading ?   
+          
+          <div>
+            <h3>Looking for the best gift ideas 🎁 💡</h3>
+            <img src="/loading.gif" className={styles.loading} />
+          </div> 
+          :
+          <>
+          <h3> 🎁 Christmas Gift Generator 🎁  </h3>
+          <form onSubmit={onSubmit}>
           <label>For who is the gift?</label>
           <select
             name="gender"
@@ -99,13 +109,8 @@ export default function Gifts() {
           />
           <input type="submit" value="Generate gift ideas" />
         </form>
-
-        {loading && (
-          <div>
-            <h3>Looking for the best gift ideas 🎁 💡</h3>
-            <img src="/loading.gif" className={styles.loading} />
-          </div>
-        )}
+        </>
+        }
         {result && (
           <div className={styles.result} 
           dangerouslySetInnerHTML={{ __html: result }}

@@ -1,3 +1,5 @@
+
+
 @font-face {
   font-family: "ColfaxAI";
   src: url(https://cdn.openai.com/API/fonts/ColfaxAIRegular.woff2)
@@ -13,7 +15,19 @@
   font-weight: bold;
   font-style: normal;
 }
+
+
+.body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: center;
+  
+}
+
+
 .main,
+
 .main input {
   font-size: 16px;
   line-height: 24px;
@@ -24,7 +38,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 60px;
+  padding: 60px 0;
+  background-color: rgba(220, 220, 220, 0.3);
+  border-radius: 20px;
+  width: 70%;
+  margin: 3rem 0;
+  box-shadow: -10px 7px 7px rgba(0, 0, 0, 0.064);
 }
 .main .icon {
   width: 34px;
@@ -72,4 +91,20 @@
 .main .result {
   font-weight: bold;
   margin-top: 40px;
+  width: 60%;
+}
+
+@media (max-width: 600px) {
+
+  .main h3 {
+    font-size: 26px;
+  }  
+
+  .main .result {
+    font-weight: bold;
+    margin-top: 1rem;
+    width: 90%;
+  }
+  
+
 }
